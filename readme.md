@@ -20,3 +20,5 @@ Es un proyecto para gestionar el paso de la solicitud de algun tramite documenta
  - Correr en la consola usando:
  `(env_gestor)$ python manage.py runserver --settings=proy_gestor.settings.dev`
 
+ - Correr las migraciones:
+  `python manage.py migrate --settings=proy_gestor.settings.dev`

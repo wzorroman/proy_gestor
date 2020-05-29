@@ -57,6 +57,8 @@ out/
 *.sqllite
 *.sqllite3
 *.sqlite
+*.sqlite3
+
 
 
 ### VirtualEnv template
