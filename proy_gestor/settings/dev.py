@@ -1,11 +1,11 @@
-from .base import *
+from .base import *  # noqa
 
-INSTALLED_APPS +=[
+INSTALLED_APPS +=[  # noqa
     'django_extensions',
     'debug_toolbar',
 ]
 
-MIDDLEWARE += [
+MIDDLEWARE += [  # noqa
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 

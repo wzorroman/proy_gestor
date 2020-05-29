@@ -6,7 +6,7 @@ Es un proyecto para gestionar el paso de la solicitud de algun tramite documenta
 - Como BD use el por defecto sqlite3, asi el administrador de BD = DBeaver
 
 ## Instalando el proyecto
- 
+
 - Instalar pip `sudo apt-get install python-pip`
 - Instalar enviroment `sudo pip install virtualenv`
 - Crear un entorno virtual virtualenv env_gestor
