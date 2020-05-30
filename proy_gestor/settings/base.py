@@ -17,6 +17,7 @@ RUTA_SETTINGS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BASE_DIR = os.path.realpath(os.path.join(RUTA_SETTINGS, '..'))
 
+APPS_DIR = os.path.realpath(os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -41,6 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+CUSTOM_APP = [
+    'apps.core',
+]
+
+THIRDS_APP = []
+
+INSTALLED_APPS += THIRDS_APP
+INSTALLED_APPS += CUSTOM_APP
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,13 +61,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+MIDDLEWARE_INSTALLED = []
+
+MIDDLEWARE += MIDDLEWARE_INSTALLED
+
 ROOT_URLCONF = 'proy_gestor.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(APPS_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,6 +136,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+
+    os.path.join(APPS_DIR, 'static'),
+    # '/var/www/static/',                           # error en develop con debug toolbar
+]
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
+
+MEDIA_URL = "/media/"
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
