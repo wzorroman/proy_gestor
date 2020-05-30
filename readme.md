@@ -22,3 +22,11 @@ Es un proyecto para gestionar el paso de la solicitud de algun tramite documenta
 
  - Correr las migraciones:
   `python manage.py migrate --settings=proy_gestor.settings.dev`
+
+## Para crear una nueva app
+ - Se tiene que crear con el comando:
+   `python manage.py startapp name_my_app`
+ - Luego moverla a la carpeta **apps**, en donde se encuentra todas las apps creadas previamente.
+
+## Sobre uso de constantes en el proyecto
+ - El manejo de todas las constantes esta en el archivo **constants** para todo el proyecto, la ubicacion esta en la carpeta "commons" dentro de apps

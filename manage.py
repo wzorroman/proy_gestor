@@ -16,6 +16,11 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
+    # This allows easy placement of apps within the interior
+    # apps directory.
+    current_path = os.path.dirname(os.path.abspath(__file__))
+    os.path.realpath(os.path.join(current_path, "apps"))
+
 
 if __name__ == '__main__':
     main()
